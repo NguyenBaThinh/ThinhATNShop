@@ -22,7 +22,7 @@
 		$login_check = pg_num_rows($data);
 		if($login_check > 0)
 		{
-			if ($_POST['username'] == 'bos')
+			if ($_POST['username'] == $role 1)
 			{
 				header('Location: index.php');
 			}

@@ -1,5 +1,5 @@
 <?php 
-			echo '<p>TEST HEROKU POSTGRESQL DATABASE </p>'; 
+			echo '<p>THINH ATN SHOP </p>'; 
 			# Heroku credential 
 			$host_heroku = "ec2-52-71-231-37.compute-1.amazonaws.com";
 			$db_heroku = "di2ellqdbmej3";

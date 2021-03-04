@@ -1,7 +1,5 @@
   
 <?php
-session_start();
-
 	$host_heroku = "ec2-18-206-84-251.compute-1.amazonaws.com";
 	$db_heroku = "d8k42dnhtd0o9i";
 	$user_heroku = "crmjpgdtqgprga";
@@ -21,18 +19,14 @@ session_start();
 		$sql ="select * from login where username = '$_POST[username]' and password = '$_POST[password]'";
 		$data = pg_query($pg_heroku,$sql);
 		$login_check = pg_num_rows($data);
-		/* if($login_check > 0
+		if($login_check > 0)
 		{
-			header('location: home1.php');
-		}
-		else{
-			header('location: home.php');
-		}
+			header('location: index.php');
 		}
 		else{
 			echo "Invalid Details";
 		}
-		*/
+		
 		
 		
 ?>

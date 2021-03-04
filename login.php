@@ -1,6 +1,6 @@
   
 <?php
-	$host_heroku = "ec2-18-206-84-251.compute-1.amazonaws.com";
+	$host_heroku = "ec2-52-71-231-37.compute-1.amazonaws.com";
 	$db_heroku = "di2ellqdbmej3";
 	$user_heroku = "wcluvkjuqpcoyh";
 	$pw_heroku = "ba7a9a28b0a05adf03800783a7d4b5c3017d130f4f7baf3fb9eddbe47f8d66d5";

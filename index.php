@@ -57,14 +57,16 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<?php
-		if(isset($_GET['Add'])){
-			$sql = "INSERT INTO atn set id=:id, product_name=:name, product_stock=:stock, product_price=:price";
+		if(isset($_GET['add'])){
+			$sql = "INSERT INTO atn set product_ID=:id, product_name=:name, product_stock=:stock, product_price=:price";
 			$result = pg_query($pg_heroku, $sql);
+			$id=htmlspecialchars(strip_tags($_POST['id']));
 			$name=htmlspecialchars(strip_tags($_POST['name']));
-       			$description=htmlspecialchars(strip_tags($_POST['description']));
+       			$stock=htmlspecialchars(strip_tags($_POST['stock']));
         		$price=htmlspecialchars(strip_tags($_POST['price']));
+			$result->bindParam(':id', $id);
 			$result->bindParam(':name', $name);
-       			$result->bindParam(':description', $description);
+       			$result->bindParam(':description', $stock);
        			$result->bindParam(':price', $price);
 			if($result->execute())
 			{
@@ -94,7 +96,7 @@
 			<tr>
 			<td></td>
 			<td>
-				<input type="submit" value="Add" class='btn btn-primary'/>
+				<input type="submit" name = "add" value="Add" class='btn btn-primary'/>
 				<a href='index.php' class='btn btn-danger'>Cancel Go back</a>
             		</td>
        			 </tr>

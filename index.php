@@ -51,15 +51,28 @@
 			pg_free_result($result);
 
 			echo '</table></body></html>';
-			#update
-			$sql = "update atn set product_name ='ex_toy' , product_stock = 1, product_price ='10000'  where id = 1;
+		?> 
+		<form name = "input" action="" method="get">
+			product_id: <input type="number" name="id" value="" /><br />
+			product_name: <input type="text" name="name" value="" /><br />
+			product_stock: <input type="number" name="stock" value="" /><br />
+			product_price: <input type="number" name="price" value="" /><br />
+			<input type="submit" name="add" value="Add" />
+			<input type="submit" name="update" value="Update" />
+		</form>	
+		<?php
+		#Add
+		if(isset($_GET['add'])){
+			$sql = "insert into atn(id, product_name, product_stock, product_price) values(1, 'ex_toy', 1, '10000')";
 			$result = pg_query($pg_heroku, $sql);
 			if($result){
-			  echo "Updated successfully.";
-			} else {
-			  echo  pg_last_error($pg_heroku);;
-			}
-		?> 
+			  echo "Record Saved";
+			  header('Location: index.php')
+			} 
+			
+		}
+		?>
+		
 		
 			
 			

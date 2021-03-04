@@ -21,11 +21,7 @@
 		$login_check = pg_num_rows($data);
 		if($login_check > 0)
 		{
-			header('location: index.php');
-		}
-		else
-		{
-			header('location: index.php');
+			echo"login success";
 		}
 		else{
 			echo "Invalid Details";

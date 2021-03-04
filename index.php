@@ -1,10 +1,4 @@
-
-<html>
-	<head>
-		<title>PHP Test</title>
-	</head>
-	<body>
-		<?php 
+<?php 
 			echo '<p>TEST HEROKU POSTGRESQL DATABASE </p>'; 
 			# Heroku credential 
 			$host_heroku = "ec2-52-71-231-37.compute-1.amazonaws.com";
@@ -53,7 +47,7 @@
 
 			echo '</table></body></html>';
 		?> 
-		<form name = "input" action="" method="get">
+		<form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
 			<table class='table table-hover table-responsive table-bordered'>
 			<tr>
 			<td>product_id</td> 
@@ -83,7 +77,19 @@
 		
 		
 		
+		
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PHP Test</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	</head>
+	<body>
 			
-			
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+
+		
 	</body>
 </html>

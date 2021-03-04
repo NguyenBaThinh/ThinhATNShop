@@ -45,9 +45,9 @@
 	<meta charset="utf-8">
 </head>
 <body>
-<div>
+
 	<form method="POST" action="login.php">
-	
+	<fieldset>
 	    <legend>Đăng nhập</legend>
 	    	<table>
 	    		<tr>
@@ -63,6 +63,6 @@
 	    		</tr>
 	    	</table>  	
  	 </form>
-	</div>
+	</fieldset>
 </body>
 </html>

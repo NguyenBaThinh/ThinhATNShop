@@ -1,20 +1,4 @@
-<?php
-		if(isset($_GET['Add'])){
-			$sql = "INSERT INTO atn set id=:id, product_name=:name, product_stock=:stock, product_price=:price";
-			$result = pg_query($pg_heroku, $sql);
-			$name=htmlspecialchars(strip_tags($_POST['name']));
-       			$description=htmlspecialchars(strip_tags($_POST['description']));
-        		$price=htmlspecialchars(strip_tags($_POST['price']));
-			$result->bindParam(':name', $name);
-       			$result->bindParam(':description', $description);
-       			$result->bindParam(':price', $price);
-			if($result->execute())
-			{
-			  header('Location: index.php')
-			} 
-			echo "error"; #pg_last_error($pg_heroku)
-		}
-?>
+
 <html>
 	<head>
 		<title>PHP Test</title>

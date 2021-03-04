@@ -55,7 +55,7 @@
 			echo '</table></body></html>';
 		?> 		
 		<form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
-		
+		<table class='table table-hover table-responsive table-bordered'>
 			<tr>
 			<td>product_id</td> 
 			<td><input type='number' name='id' class='form-control' /></td>
@@ -79,7 +79,7 @@
 				<a href='index.php' class='btn btn-danger'>Cancel Go back</a>
             		</td>
        			 </tr>
-			
+			</table>
 		</form>
 		
 	</body>

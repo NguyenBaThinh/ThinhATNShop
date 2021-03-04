@@ -46,7 +46,7 @@
 </head>
 <body>
 
-	<form method="POST" >
+	<form method="POST" action="login.php">
 	
 	    <legend>Đăng nhập</legend>
 	    	<table>

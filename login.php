@@ -10,7 +10,7 @@
 
 	if (!$pg_heroku)
 	{
-		die('Error: Could not connect: ' . pg_last_error());
+		Exit('Error: Could not connect: ' . pg_last_error());
 	}
 
 

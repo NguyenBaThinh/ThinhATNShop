@@ -41,7 +41,7 @@
 <body>
 
 	<form method="POST">
-	<fieldset>
+	// <fieldset>
 	    <legend>Đăng nhập</legend>
 	    	<table>
 	    		<tr>
@@ -56,7 +56,7 @@
 	    			<td colspan="2" align="center"> <input type="submit" name="btn_submit" value="Đăng nhập"></td>
 	    		</tr>
 	    	</table>
-  	</fieldset>
+  	// </fieldset>
  	 </form>
 </body>
 </html>

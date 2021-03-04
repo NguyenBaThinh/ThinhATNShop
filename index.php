@@ -53,7 +53,7 @@
 
 			echo '</table></body></html>';
 		?> 
-		<form name = "input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
+		<form name = "input" action="" method="get">
 			<table class='table table-hover table-responsive table-bordered'>
 			<tr>
 			<td>product_id</td> 

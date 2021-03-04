@@ -51,9 +51,7 @@
 			pg_free_result($result);
 
 			echo '</table></body></html>';
-
-		?> 
-		<?php 
+			#update
 			$sql = "update test set product_name ='ex_toy' , product_stock = 1, product_price ='10000'  where id = 1;
 			$result = pg_query($pg_heroku, $sql);
 			if($result){
@@ -61,6 +59,9 @@
 			} else {
 			  echo  pg_last_error($pg_heroku);;
 			}
-		?>	
+		?> 
+		
+			
+			
 	</body>
 </html>

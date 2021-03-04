@@ -1,15 +1,7 @@
   
 <?php
 session_start();
-?>
 
-<html>
-<head>
-	<title>Trang đăng nhập</title>
-	<meta charset="utf-8">
-</head>
-<body>
-<?php
 	$host_heroku = "ec2-18-206-84-251.compute-1.amazonaws.com";
 	$db_heroku = "d8k42dnhtd0o9i";
 	$user_heroku = "crmjpgdtqgprga";
@@ -26,35 +18,34 @@ session_start();
 
 	if (isset($_POST["btn_submit"])) 
 	{
-		$username = $_POST["username"];
-		$password = $_POST["password"];
-	
-		$username = strip_tags($username);
-		$username = addslashes($username);
-		$password = strip_tags($password);
-		$password = addslashes($password);
-	
-	
-		if ($username == "" || $password =="") 
+		$sql ="select * from login where username = '$_POST[username]' and password = '$_POST[password]'";
+		$data = pg_query($pg_heroku,$sql);
+		$login_check = pg_num_rows($data);
+		/* if($login_check > 0
 		{
-			echo "username hoặc password bạn không được để trống!";
+			header('location: home1.php');
 		}
-		else
-		{
-			$sql = "select * from users where username = '$username' and password = '$password' ";
-			$query = mysqli_query($conn,$sql);
-			$num_rows = mysqli_num_rows($query);
-			if ($num_rows==0) 
-			{
-				echo "tên đăng nhập hoặc mật khẩu không đúng !";
-			}
-			else
-			{
-				$_SESSION['username'] = $username;
-				 header('Location: index.php');
-			}
-	}
+		else{
+			header('location: home.php');
+		}
+		}
+		else{
+			echo "Invalid Details";
+		}
+		*/
+		
+		
 ?>
+
+
+
+<html>
+<head>
+	<title>Trang đăng nhập</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
 	<form method="POST" action="login.php">
 	<fieldset>
 	    <legend>Đăng nhập</legend>

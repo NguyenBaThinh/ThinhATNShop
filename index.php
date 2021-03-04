@@ -61,18 +61,7 @@
 			<input type="submit" name="update" value="Update" />
 		</form>	
 		
-		/* php
-		#Add
-		if(isset($_GET['add'])){
-			$sql = "insert into atn(id, product_name, product_stock, product_price) values(1, 'ex_toy', 1, '10000')";
-			$result = pg_query($pg_heroku, $sql);
-			if($result){
-			  echo "Record Saved";
-			  header('Location: index.php')
-			} 
-			
-		}
-		  */
+		
 		
 		
 			

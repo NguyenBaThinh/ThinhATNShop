@@ -64,11 +64,11 @@
 		if(isset($_GET['add'])){
 			$sql = "insert into atn(id, product_name, product_stock, product_price) values(?,?,?,?)";
 			$result = pg_query($pg_heroku, $sql);
-			if($result){
-			  echo "Record Saved";
+			if($result)
+			{
 			  header('Location: index.php')
 			} 
-			
+			echo pg_last_error($pg_heroku);
 		}
 		?>
 		

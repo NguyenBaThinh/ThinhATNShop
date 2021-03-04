@@ -45,7 +45,7 @@
 	<meta charset="utf-8">
 </head>
 <body>
-
+<div>
 	<form method="POST" action="login.php">
 	
 	    <legend>Đăng nhập</legend>
@@ -61,8 +61,8 @@
 	    		<tr>
 	    			<td colspan="2" align="center"> <input type="submit" name="btn_submit" value="Đăng nhập"></td>
 	    		</tr>
-	    	</table>
-  	
+	    	</table>  	
  	 </form>
+	</div>
 </body>
 </html>

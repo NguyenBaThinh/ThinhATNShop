@@ -13,21 +13,60 @@
 		Exit('Error: Could not connect: ' . pg_last_error());
 	}
 
-
+	/*
 	if (isset($_POST['btn_submit'])) 
 	{
 		$sql ="select * from login where username = '$_POST[username]' and password = '$_POST[password]'";
 		$data = pg_query($pg_heroku,$sql);
 		$login_check = pg_num_rows($data);
-		if($login_check > 0)
+		if (!isset($_SESSION['username'])) 
+		{
+			 header('Location: login.php');
+		}
+		
+		 if($login_check > 0)
 		{
 			echo"login success";
 		}
 		else{
 			echo "Invalid Details";
+		} 
+	}
+		*/
+	if (isset($_POST["btn_submit"])) 
+	{
+		// lấy thông tin người dùng
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+		//làm sạch thông tin, xóa bỏ các tag html, ký tự đặc biệt 
+		//mà người dùng cố tình thêm vào để tấn công theo phương thức sql injection
+		$username = strip_tags($username);
+		$username = addslashes($username);
+		$password = strip_tags($password);
+		$password = addslashes($password);
+		if ($username == "" || $password =="") 
+		{
+			echo "username hoặc password bạn không được để trống!";
+		}
+		else
+		{
+			$sql = "select * from users where username = '$username' and password = '$password' ";
+			$query = mysqli_query($conn,$sql);
+			$num_rows = mysqli_num_rows($query);
+			if ($num_rows==0) 
+			{
+				echo "tên đăng nhập hoặc mật khẩu không đúng !";
+			}
+			else
+			{
+				//tiến hành lưu tên đăng nhập vào session để tiện xử lý sau này
+				$_SESSION['username'] = $username;
+				// Thực thi hành động sau khi lưu thông tin vào session
+				// ở đây mình tiến hành chuyển hướng trang web tới một trang gọi là index.php
+				header('Location: index.php');
+			}
 		}
 	}
-		
 		
 ?>
 
@@ -40,7 +79,7 @@
 </head>
 <body>
 
-	<form method="POST">
+	<form method="POST" action="login.php">
 	
 	    <legend>Đăng nhập</legend>
 	    	<table>

@@ -1,3 +1,20 @@
+<?php
+		if(isset($_GET['Add'])){
+			$sql = "INSERT INTO atn set id=:id, product_name=:name, product_stock=:stock, product_price=:price";
+			$result = pg_query($pg_heroku, $sql);
+			$name=htmlspecialchars(strip_tags($_POST['name']));
+       			$description=htmlspecialchars(strip_tags($_POST['description']));
+        		$price=htmlspecialchars(strip_tags($_POST['price']));
+			$result->bindParam(':name', $name);
+       			$result->bindParam(':description', $description);
+       			$result->bindParam(':price', $price);
+			if($result->execute())
+			{
+			  header('Location: index.php')
+			} 
+			echo "error"; #pg_last_error($pg_heroku)
+		}
+?>
 <html>
 	<head>
 		<title>PHP Test</title>
@@ -52,25 +69,34 @@
 
 			echo '</table></body></html>';
 		?> 
-		<form name = "input" action="" method="get">
-			product_id: <input type="number" name="id" value="" /><br />
-			product_name: <input type="text" name="name" value="" /><br />
-			product_stock: <input type="number" name="stock" value="" /><br />
-			product_price: <input type="number" name="price" value="" /><br />
-			<input type="submit" name="add" value="Add" />
-			<input type="submit" name="update" value="Update" />
+		<form name = "input" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="get">
+			<table class='table table-hover table-responsive table-bordered'>
+			<tr>
+			<td>product_id</td> 
+			<td><input type='number' name='id' class='form-control' /></td>
+			</tr>
+			<tr>
+			<td>product_name</td> 
+			<td><input type='number' name='name' class='form-control' /></td>
+			</tr>
+			<tr>
+			<td>product_stock</td> 
+			<td><input type='number' name='stock' class='form-control' /></td>
+			</tr>
+			<tr>
+			<td>product_price</td> 
+			<td><input type='number' name='price' class='form-control' /></td>
+			</tr>
+			<tr>
+			<td></td>
+			<td>
+				<input type="submit" value="Add" class='btn btn-primary'/>
+				<a href='index.php' class='btn btn-danger'>Cancel Go back</a>
+            		</td>
+       			 </tr>
+			</table>
 		</form>	
-		<?php
-		if(isset($_GET['add'])){
-			$sql = "insert into atn(id, product_name, product_stock, product_price) values(?,?,?,?)";
-			$result = pg_query($pg_heroku, $sql);
-			if($result)
-			{
-			  header('Location: index.php')
-			} 
-			echo pg_last_error($pg_heroku);
-		}
-		?>
+		
 		
 		
 			

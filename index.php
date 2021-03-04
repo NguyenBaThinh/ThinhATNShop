@@ -52,7 +52,7 @@
 
 			echo '</table></body></html>';
 			#update
-			$sql = "update test set product_name ='ex_toy' , product_stock = 1, product_price ='10000'  where id = 1;
+			$sql = "update atn set product_name ='ex_toy' , product_stock = 1, product_price ='10000'  where id = 1;
 			$result = pg_query($pg_heroku, $sql);
 			if($result){
 			  echo "Updated successfully.";

@@ -23,6 +23,10 @@
 		{
 			header('location: index.php');
 		}
+		else
+		{
+			header('location: index.php');
+		}
 		else{
 			echo "Invalid Details";
 		}

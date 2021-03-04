@@ -1,9 +1,9 @@
   
 <?php
 	$host_heroku = "ec2-18-206-84-251.compute-1.amazonaws.com";
-	$db_heroku = "d8k42dnhtd0o9i";
-	$user_heroku = "crmjpgdtqgprga";
-	$pw_heroku = "0d86d0fb5f24be75ffb6728bb2ffaa6762b75489e8923fda3cdf71c519a99d67";
+	$db_heroku = "di2ellqdbmej3";
+	$user_heroku = "wcluvkjuqpcoyh";
+	$pw_heroku = "ba7a9a28b0a05adf03800783a7d4b5c3017d130f4f7baf3fb9eddbe47f8d66d5";
 	# Create connection to Heroku Postgres
 	$conn_string = "host=$host_heroku port=5432 dbname=$db_heroku user=$user_heroku password=$pw_heroku";
 	$pg_heroku = pg_connect($conn_string);

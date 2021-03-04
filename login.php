@@ -17,6 +17,7 @@
 	if (isset($_POST['btn_submit'])) 
 	{
 		$role 1 = 'bos';
+		$_POST['username'] = $user;
 		$sql ="select * from login where username = '$_POST[username]' and password = '$_POST[password]'";
 		$data = pg_query($pg_heroku,$sql);
 		$login_check = pg_num_rows($data);

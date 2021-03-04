@@ -26,7 +26,7 @@
 		else{
 			echo "Invalid Details";
 		}
-		
+	}
 		
 		
 ?>

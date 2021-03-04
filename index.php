@@ -1,9 +1,4 @@
 
-			
-		
-		
-		
-
 <html>
 	<head>
 		<title>PHP Test</title>
@@ -13,10 +8,10 @@
 	<?php 
 			echo '<p>THINH ATN SHOP </p>'; 
 			# Heroku credential 
-			$host_heroku = "ec2-52-71-231-37.compute-1.amazonaws.com";
-			$db_heroku = "di2ellqdbmej3";
-			$user_heroku = "wcluvkjuqpcoyh";
-			$pw_heroku = "ba7a9a28b0a05adf03800783a7d4b5c3017d130f4f7baf3fb9eddbe47f8d66d5";
+			$host_heroku = "ec2-35-171-57-132.compute-1.amazonaws.com";
+			$db_heroku = "d8847oi5c0tnc2";
+			$user_heroku = "jvkzuhcsezvfte";
+			$pw_heroku = "b7c215aa5cb23f04f16204e65d25bb5258955ca280199c68aff540d9fbba4b71";
 			# Create connection to Heroku Postgres
 			$conn_string = "host=$host_heroku port=5432 dbname=$db_heroku user=$user_heroku password=$pw_heroku";
 			$pg_heroku = pg_connect($conn_string);
@@ -59,20 +54,6 @@
 
 			echo '</table></body></html>';
 		?> 		
-	
-  	<form name ="input" method="get" action="" >
-		
-			
-			product_id: <input type='number' name='id' class='form-control' /><br />
-			product_name:<input type='number' name='name' class='form-control' /><br />
-			product_stock: <input type='number' name='stock' class='form-control' /><br />
-			product_price: <input type='number' name='price' class='form-control' /><br />
-			
-				<input type="submit" value="Add" class='btn btn-primary'/><br />
-				<a href='index.php' class='btn btn-danger'>Cancel Go back</a><br />
-            		
-			
-		</form>
 
 		
 	</body>

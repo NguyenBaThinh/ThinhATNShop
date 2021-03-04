@@ -61,7 +61,7 @@
 			<input type="submit" name="update" value="Update" />
 		</form>	
 		
-		/* ?php
+		/* php
 		#Add
 		if(isset($_GET['add'])){
 			$sql = "insert into atn(id, product_name, product_stock, product_price) values(1, 'ex_toy', 1, '10000')";
@@ -72,7 +72,7 @@
 			} 
 			
 		}
-		 > */
+		  */
 		
 		
 			

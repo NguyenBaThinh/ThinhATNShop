@@ -14,7 +14,7 @@
 	}
 
 
-	if (isset($_POST["btn_submit"])) 
+	if (isset($_POST['btn_submit'])) 
 	{
 		$sql ="select * from login where username = '$_POST[username]' and password = '$_POST[password]'";
 		$data = pg_query($pg_heroku,$sql);

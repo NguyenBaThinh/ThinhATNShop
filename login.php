@@ -19,12 +19,7 @@
 		$sql ="select * from login where username = '$_POST[username]' and password = '$_POST[password]'";
 		$data = pg_query($pg_heroku,$sql);
 		$login_check = pg_num_rows($data);
-		if (!isset($_SESSION['username'])) 
-		{
-			 header('Location: login.php');
-		}
-		
-		 if($login_check > 0)
+		if($login_check > 0)
 		{
 			echo"login success";
 		}

@@ -63,7 +63,7 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
-			<table class='table table-hover table-responsive table-bordered'>
+		
 			<tr>
 			<td>product_id</td> 
 			<td><input type='number' name='id' class='form-control' /></td>
@@ -87,7 +87,7 @@
 				<a href='index.php' class='btn btn-danger'>Cancel Go back</a>
             		</td>
        			 </tr>
-			</table>
+			
 		</form>
 
 		

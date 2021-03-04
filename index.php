@@ -1,4 +1,17 @@
-<?php 
+
+			
+		
+		
+		
+		
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>PHP Test</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	</head>
+	<body>
+	<?php 
 			echo '<p>THINH ATN SHOP </p>'; 
 			# Heroku credential 
 			$host_heroku = "ec2-52-71-231-37.compute-1.amazonaws.com";
@@ -46,20 +59,7 @@
 			pg_free_result($result);
 
 			echo '</table></body></html>';
-		?> 
-			
-		
-		
-		
-		
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>PHP Test</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-	</head>
-	<body>
-			
+		?> 		
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<form name ="input" method="get" action="" >

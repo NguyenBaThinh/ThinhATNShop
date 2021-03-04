@@ -16,16 +16,26 @@
 	
 	if (isset($_POST['btn_submit'])) 
 	{
+		$role = 1;
 		$sql ="select * from login where username = '$_POST[username]' and password = '$_POST[password]'";
 		$data = pg_query($pg_heroku,$sql);
 		$login_check = pg_num_rows($data);
-		if($login_check >= 0)
+		if($login_check > 0)
 		{
-			header('Location: index.php');
+			if ($_POST['username'] == $role 1)
+			{
+				header('Location: index.php');
+			}
+			else
+			{
+				echo "deo co phan su mien vao!";
+			}
 		}
-		else{
+		else
+		{
 			echo "Invalid Details";
-		} 
+		}
+	
 	}
 		
 	

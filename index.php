@@ -54,7 +54,33 @@
 
 			echo '</table></body></html>';
 		?> 		
-
+		<form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
+		
+			<tr>
+			<td>product_id</td> 
+			<td><input type='number' name='id' class='form-control' /></td>
+			</tr>
+			<tr>
+			<td>product_name</td> 
+			<td><input type='number' name='name' class='form-control' /></td>
+			</tr>
+			<tr>
+			<td>product_stock</td> 
+			<td><input type='number' name='stock' class='form-control' /></td>
+			</tr>
+			<tr>
+			<td>product_price</td> 
+			<td><input type='number' name='price' class='form-control' /></td>
+			</tr>
+			<tr>
+			<td></td>
+			<td>
+				<input type="submit" value="Add" class='btn btn-primary'/>
+				<a href='index.php' class='btn btn-danger'>Cancel Go back</a>
+            		</td>
+       			 </tr>
+			
+		</form>
 		
 	</body>
 </html>

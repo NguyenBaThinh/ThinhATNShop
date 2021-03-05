@@ -85,7 +85,8 @@ session_start();
             	
 		</form>
 		<?php
-		if(isset($_GET['add'])){
+		if(isset($_GET['add']))
+		{
 			$sql = "insert into atn(product_ID, product_name, product_stock, product_price) values ($_GET[id],'$_GET[name]',$_GET[stock],$_GET[price])";
 			$result = pg_query($pg_heroku, $sql);
 			if($result)
@@ -93,15 +94,16 @@ session_start();
 			  header('Location: index.php');
 			} 
 		}
-		?>
-		<?php 
-		if(isset($_GET['delete'])){
+		 
+		if(isset($_GET['delete']))
+		{
 			$sql = "delete from atn where id= $_GET[id]";
 			$result = pg_query($pg_heroku, $sql);
 			if($result)
 			{
 			  header('Location: index.php');
 			} 
+		}
 		?>
 		
 		

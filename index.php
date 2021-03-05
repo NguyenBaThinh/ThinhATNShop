@@ -45,7 +45,7 @@ session_start();
 				echo '</tr>';
 				$i = $i + 1;
 			}
-			echo "<a href='#' onclick='delete_user({$id});'  class='btn btn-danger'>Delete</a>";
+			echo "<a href='#' onclick='delete_user({$product_ID});'  class='btn btn-danger'>Delete</a>";
 			pg_free_result($result);
 
 			echo "</table>";

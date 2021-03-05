@@ -108,7 +108,7 @@ session_start();
 
 		if(isset($_GET['update']))
 		{
-			$sql = "update atn set product_name = '$_GET[name]' , stock = $_GET[stock], price = $_GET[price] where product_Id = $_GET[id];
+			$sql = "update atn set product_name = '$_GET[name]' , product_stock = $_GET[stock], product_price = $_GET[price] where product_Id = $_GET[id];
 			$result = pg_query($pg_heroku, $sql);
 			if($result)
 			{

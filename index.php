@@ -26,7 +26,6 @@ session_start();
 				$i = $i + 1;
 				
 			}
-			echo "<th>Action</th>";
 			echo '</tr>';
 			# Display data row by row
 			$i = 0;
@@ -81,6 +80,7 @@ session_start();
 			product_stock:<input type='number' name='stock' class='form-control' /></td>
 			product_price:<input type='number' name='price' class='form-control' /></td>
 				<input type="submit" name = "add" value="Add" class='btn btn-primary'/>
+				<input type="submit" name = "update" value="Update" class='btn btn-primary'/>
 				<input type="submit" name = "delete" value="Delete" class='btn btn-danger'/>
 			
             	
@@ -99,6 +99,16 @@ session_start();
 		if(isset($_GET['delete']))
 		{
 			$sql = "delete from atn where product_Id = $_GET[id]";
+			$result = pg_query($pg_heroku, $sql);
+			if($result)
+			{
+			  header('Location: index.php');
+			} 
+		}
+
+		if(isset($_GET['update']))
+		{
+			$sql = "update atn set product_name = '$_GET[name]' , stock = $_GET[stock], price = $_GET[price] where product_Id = $_GET[id];
 			$result = pg_query($pg_heroku, $sql);
 			if($result)
 			{

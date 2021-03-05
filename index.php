@@ -73,9 +73,9 @@ session_start();
 			$result = pg_query($pg_heroku, $sql);
 			if($result)
 			{
-			  header('Location: index.php')
+			  header('Location: index.php');
 			} 
-			echo pg_last_error($pg_heroku);
+			header('Location: index.php');
 		}
 ?>
 		

@@ -24,11 +24,11 @@
 		{
 			if ($_POST['username'] == 'bos')
 			{
-				header('Location: index.php');
+				header('Location: Director.php');
 			}
 			else
 			{
-				echo "deo co phan su mien vao!";
+				header('Location: StoreStaff.php');
 			}
 		}
 		else

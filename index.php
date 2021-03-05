@@ -14,9 +14,6 @@ session_start();
 			{
 				die('Error: Could not connect: ' . pg_last_error());
 			}
-			
-			
-			/*
 			# Get data by query
 			$query = 'SELECT * FROM atn ORDER BY product_ID ASC';
 			$result = pg_query($pg_heroku, $query);
@@ -52,50 +49,8 @@ session_start();
 			pg_free_result($result);
 
 			echo "</table>";
+		?>	
 			
-			 $result ->execute();
-			
-			$num = $result->rowCount();
-			 if($num>0)
-			{
-				echo "<table class='table table-hover table-responsive table-bordered'>";
-				echo "<tr>";
-				echo "<th>ID</th>";
-				echo "<th>Product Name</th>";
-				echo "<th>Stock</th>";
-				echo "<th>Price</th>";
-				echo "</tr>";
-				while ($row = $result->fetch(PDO::FETCH_ASSOC))
-				{
-					 // extract row
-					 // this will make $row['firstname'] to
-					 // just $firstname only
-					  extract($row);
-
-					// creating new table row per record
-					echo "<tr>";
-					echo "<td>{$product_ID}</td>";
-					echo "<td>{$product_name}</td>";
-					echo "<td>{$product_stock}</td>";
-					echo "<td>${$product_price}</td>";
-					echo "<td>";
-					    // read one record 
-					echo "<a href='read_one.php?id={$product_ID}' class='btn btn-info m-r-1em'>Read</a>";
-
-					    // we will use this links on next part of this post
-					echo "<a href='update.php?id={$product_ID}' class='btn btn-primary m-r-1em'>Edit</a>";
-
-					    // we will use this links on next part of this post
-					echo "<a href='#' onclick='delete_user({$product_ID});'  class='btn btn-danger'>Delete</a>";
-					echo "</td>";
-					echo "</tr>";
-				}
-				
-				echo "</table>";
-			}else{
-			    echo "<div class='alert alert-danger'>No records found.</div>";
-			} */
-		?> 		
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -116,35 +71,7 @@ session_start();
 		
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<?php
-		$query = 'SELECT * FROM atn ORDER BY product_ID ASC';
-		$result = pg_query($pg_heroku, $query);
-	?>
-		<table border = "0">
-			<tr>
-			<th>ID</th>
-			<th>Product Name</th>
-			<th>Stock</th>
-			<th>Price</th>
-			<th>Delete</th>
-			<th>Update</th>
-			</tr>
-	<?php
-		while($row = pg_fetch_row($result)){
-	?>
-			<tr>
-				<td><?php echo $row['product_ID']?>;</td>
-				<td><?php echo $row['product_name']?>;</td>
-				<td><?php echo $row['product_stock']?>;</td>
-				<td><?php echo $row['product_price']?>;</td>
-				<td><a href="delete.php?id=<?php echo $row[product]; ?>"
-				onClick="return confirm('Are you sure about that?');">Delete</a> </td>
-				<?php } ?>
-				</table>
-				<?php 
-				pg_free_result($result)
-				?>
-		}
+	
 	
 	
 		

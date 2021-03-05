@@ -65,7 +65,7 @@ session_start();
 	<body>
 	<div class="container">
 		<div class="page-header">
-            	<h1>Read Products</h1></div>
+            	<h1>Modify product</h1></div>
         </div>
 		
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

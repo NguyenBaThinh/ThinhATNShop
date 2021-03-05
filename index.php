@@ -98,7 +98,7 @@ session_start();
 		 
 		if(isset($_GET['delete']))
 		{
-			$sql = "delete from atn where id= $_GET[id]";
+			$sql = "delete from atn where product_Id = $_GET[id]";
 			$result = pg_query($pg_heroku, $sql);
 			if($result)
 			{

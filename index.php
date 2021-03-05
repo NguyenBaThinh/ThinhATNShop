@@ -69,7 +69,7 @@ session_start();
 		</form>
 		<?php
 		if(isset($_GET['add'])){
-			$sql = "insert into atn(id, product_name, product_stock, product_price) values($_GET[id],$_GET['product_name'],$_GET[product_stock],$_GET[product_price])";
+			$sql = "insert into atn(id, product_name, product_stock, product_price) values($_GET[id],'$_GET[product_name]',$_GET[product_stock],$_GET[product_price])";
 			$result = pg_query($pg_heroku, $sql);
 			if($result)
 			{

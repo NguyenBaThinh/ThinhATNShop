@@ -14,7 +14,7 @@
 	<body>
 	<?php 
 session_start();
-			echo '<p>THINH ATN SHOP </p>'; 
+			echo '<p><h1>THINH ATN SHOP </h1></p>'; 
 			# Heroku credential 
 			$host_heroku = "ec2-35-171-57-132.compute-1.amazonaws.com";
 			$db_heroku = "d8847oi5c0tnc2";
@@ -36,7 +36,7 @@ session_start();
 			while ($i < pg_num_fields($result))
 			{
 				$fieldName = pg_field_name($result, $i);
-				echo "<th> . $fieldName . </th>";
+				echo "<th><h3> . $fieldName . <h3></th>";
 				$i = $i + 1;
 				
 			}

@@ -92,7 +92,7 @@ session_start();
 			$result = pg_query($pg_heroku, $sql);
 			if($result)
 			{
-			  header('Location: index.php');
+			  header('Location: StoreStaff.php');
 			} 
 		}
 		 
@@ -102,7 +102,7 @@ session_start();
 			$result = pg_query($pg_heroku, $sql);
 			if($result)
 			{
-			  header('Location: index.php');
+			  header('Location: StoreStaff.php');
 			} 
 		}
 
@@ -112,7 +112,7 @@ session_start();
 			$result = pg_query($pg_heroku, $sql);
 			if($result)
 			{
-			  header('Location: index.php');
+			  header('Location: StoreStaff.php');
 			} 
 		}
 		?>

@@ -15,7 +15,7 @@ session_start();
 				die('Error: Could not connect: ' . pg_last_error());
 			}
 			# Get data by query
-			$query = 'SELECT * FROM atn ORDER BY product_ID ASC"';
+			$query = 'SELECT * FROM atn';
 			$result = pg_query($pg_heroku, $query);
 			$i = 0;
 			echo "<table class='table table-hover table-responsive table-bordered'>";

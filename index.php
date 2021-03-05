@@ -17,10 +17,39 @@ session_start();
 			# Get data by query
 			$query = 'SELECT * FROM atn ORDER BY product_ID ASC"';
 			$result = pg_query($pg_heroku, $query);
-			$result ->execute();
-			# Display data column by column
+			$i = 0;
+			echo "<table class='table table-hover table-responsive table-bordered'>";
+			while ($i < pg_num_fields($result))
+			{
+				$fieldName = pg_field_name($result, $i);
+				echo '<td>' . $fieldName . '</td>';
+				$i = $i + 1;
+			}
+			echo '</tr>';
+			# Display data row by row
+			$i = 0;
+			while ($row = pg_fetch_row($result)) 
+			{
+				echo '<tr>';
+				$count = count($row);
+				$y = 0;
+				while ($y < $count)
+				{
+					$c_row = current($row);
+					echo '<td>' . $c_row . '</td>';
+					next($row);
+					$y = $y + 1;
+				}
+				echo '</tr>';
+				$i = $i + 1;
+			}
+			pg_free_result($result);
+
+			echo '</table></body></html>';
+			/* $result ->execute();
+			
 			$num = $result->rowCount();
-			if($num>0)
+			 if($num>0)
 			{
 				echo "<table class='table table-hover table-responsive table-bordered'>";
 				echo "<tr>";
@@ -58,7 +87,7 @@ session_start();
 				echo "</table>";
 			}else{
 			    echo "<div class='alert alert-danger'>No records found.</div>";
-			}
+			} */
 		?> 		
 <!DOCTYPE HTML>
 <html>

@@ -60,7 +60,7 @@ session_start();
 		
 		<form method="get" action="" >
 			product_id: <input type='number' name='id' class='form-control' /></td>
-			product_name:<input type='number' name='name' class='form-control' /></td>
+			product_name:<input type='text' name='name' class='form-control' /></td>
 			product_stock:<input type='number' name='stock' class='form-control' /></td>
 			product_price:<input type='number' name='price' class='form-control' /></td>
 				<input type="submit" name = "add" value="Add" class='btn btn-primary'/>

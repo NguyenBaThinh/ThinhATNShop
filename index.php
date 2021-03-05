@@ -81,7 +81,8 @@ session_start();
 			product_stock:<input type='number' name='stock' class='form-control' /></td>
 			product_price:<input type='number' name='price' class='form-control' /></td>
 				<input type="submit" name = "add" value="Add" class='btn btn-primary'/>
-				<a href='index.php' name="delete" class='btn btn-danger'>Delete</a>
+				<input type="submit" name = "delete" value="Delete" class='btn btn-danger'/>
+			
             	
 		</form>
 		<?php

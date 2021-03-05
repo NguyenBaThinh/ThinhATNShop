@@ -42,7 +42,6 @@ session_start();
 					next($row);
 					$y = $y + 1;
 				}
-				echo "<a href='#' onclick='delete_user({$product_ID});'  class='btn btn-danger'>Delete</a>";
 				echo '</tr>';
 				$i = $i + 1;
 			}
@@ -50,6 +49,7 @@ session_start();
 			pg_free_result($result);
 
 			echo "</table>";
+			
 			/* $result ->execute();
 			
 			$num = $result->rowCount();
@@ -120,6 +120,7 @@ session_start();
 			product_stock:<input type='number' name='stock' class='form-control' /></td>
 			product_price:<input type='number' name='price' class='form-control' /></td>
 				<input type="submit" name = "add" value="Add" class='btn btn-primary'/>
+				<a href='#' onclick='delete_user({$product_ID});'  class='btn btn-danger'>Delete</a>
 				<a href='index.php' class='btn btn-danger'>Cancel Go back</a>
             	
 		</form>

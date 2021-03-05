@@ -51,7 +51,7 @@
 </head>
 <body>
 
-	<form method="POST" action="login.php">
+	<form method="POST" action="">
 	<fieldset>
 	    <legend>Đăng nhập</legend>
 	    	<table>

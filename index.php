@@ -14,6 +14,9 @@ session_start();
 			{
 				die('Error: Could not connect: ' . pg_last_error());
 			}
+			
+			
+			/*
 			# Get data by query
 			$query = 'SELECT * FROM atn ORDER BY product_ID ASC';
 			$result = pg_query($pg_heroku, $query);
@@ -50,7 +53,7 @@ session_start();
 
 			echo "</table>";
 			
-			/* $result ->execute();
+			 $result ->execute();
 			
 			$num = $result->rowCount();
 			 if($num>0)
@@ -113,6 +116,37 @@ session_start();
 		
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<?php
+		$query = 'SELECT * FROM atn ORDER BY product_ID ASC';
+		$result = pg_query($pg_heroku, $query);
+	?>
+		<table border = "0">
+			<tr>
+			<th>ID</th>
+			<th>Product Name</th>
+			<th>Stock</th>
+			<th>Price</th>
+			<th>Delete</th>
+			<th>Update</th>
+			</tr>
+	<?php
+		while($row = pg_fetch_row($result)){
+	?>
+			<tr>
+				<td><?php echo $row['product_ID']?>;</td>
+				<td><?php echo $row['product_name']?>;</td>
+				<td><?php echo $row['product_stock']?>;</td>
+				<td><?php echo $row['product_price']?>;</td>
+				<td><a href="delete.php?id=<?php echo $row[product]; ?>"
+				onClick="return confirm('Are you sure about that?');">Delete</a> </td>
+				<?php } ?>
+				</table>
+				<?php 
+				pg_free_result($result)
+				?>
+		}
+	
+	
 		
 		<form method="get" action="" >
 			product_id: <input type='number' name='id' class='form-control' /></td>

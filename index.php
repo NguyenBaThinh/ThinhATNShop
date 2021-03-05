@@ -23,8 +23,9 @@ session_start();
 			{
 				$fieldName = pg_field_name($result, $i);
 				echo '<td>' . $fieldName . '</td>';
-				$i = $i + 1;
 				echo "<th>Action</th>";
+				$i = $i + 1;
+				
 			}
 			echo '</tr>';
 			# Display data row by row

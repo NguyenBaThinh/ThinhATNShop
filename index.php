@@ -15,46 +15,69 @@ session_start();
 				die('Error: Could not connect: ' . pg_last_error());
 			}
 			# Get data by query
-			$query = 'select * from atn';
+			$query = 'SELECT * FROM atn ORDER BY product_ID ASC"';
 			$result = pg_query($pg_heroku, $query);
+			$result ->execute();
 			# Display data column by column
-			$i = 0;
-			echo '<html><body><table><tr>';
-			while ($i < pg_num_fields($result))
+			$num = $result->rowCount();
+			if($num>0)
 			{
-				$fieldName = pg_field_name($result, $i);
-				echo '<td>' . $fieldName . '</td>';
-				$i = $i + 1;
-			}
-			echo '</tr>';
-			# Display data row by row
-			$i = 0;
-			while ($row = pg_fetch_row($result)) 
-			{
-				echo '<tr>';
-				$count = count($row);
-				$y = 0;
-				while ($y < $count)
+				echo "<table class='table table-hover table-responsive table-bordered'>";
+				echo "<tr>";
+				echo "<th>ID</th>";
+				echo "<th>Product Name</th>";
+				echo "<th>Stock</th>";
+				echo "<th>Price</th>";
+				echo "</tr>";
+				while ($row = $result->fetch(PDO::FETCH_ASSOC))
 				{
-					$c_row = current($row);
-					echo '<td>' . $c_row . '</td>';
-					next($row);
-					$y = $y + 1;
-				}
-				echo '</tr>';
-				$i = $i + 1;
-			}
-			pg_free_result($result);
+					 // extract row
+					 // this will make $row['firstname'] to
+					 // just $firstname only
+					  extract($row);
 
-			echo '</table></body></html>';
+					// creating new table row per record
+					echo "<tr>";
+					echo "<td>{$product_ID}</td>";
+					echo "<td>{$product_name}</td>";
+					echo "<td>{$product_stock}</td>";
+					echo "<td>${$product_price}</td>";
+					echo "<td>";
+					    // read one record 
+					echo "<a href='read_one.php?id={$product_ID}' class='btn btn-info m-r-1em'>Read</a>";
+
+					    // we will use this links on next part of this post
+					echo "<a href='update.php?id={$product_ID}' class='btn btn-primary m-r-1em'>Edit</a>";
+
+					    // we will use this links on next part of this post
+					echo "<a href='#' onclick='delete_user({$product_ID});'  class='btn btn-danger'>Delete</a>";
+					echo "</td>";
+					echo "</tr>";
+				}
+				
+				echo "</table>";
+			}else{
+			    echo "<div class='alert alert-danger'>No records found.</div>";
+			}
 		?> 		
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<title>PHP Test</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<style>
+		    .m-r-1em{ margin-right:1em; }
+		    .m-b-1em{ margin-bottom:1em; }
+		    .m-l-1em{ margin-left:1em; }
+		    .mt0{ margin-top:0; }
+		</style>
 	</head>
 	<body>
+	<div class="container">
+		<div class="page-header">
+            	<h1>Read Products</h1></div>
+        </div>
+		
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
@@ -76,7 +99,9 @@ session_start();
 			  header('Location: index.php');
 			} 
 		}
-?>
+		?>
+		
+		
 		
 	</body>
 </html>

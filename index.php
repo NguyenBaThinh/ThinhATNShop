@@ -1,4 +1,5 @@
 <?php 
+session_start();
 			echo '<p>THINH ATN SHOP </p>'; 
 			# Heroku credential 
 			$host_heroku = "ec2-35-171-57-132.compute-1.amazonaws.com";
@@ -57,32 +58,14 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
-		<form method="get" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
-		<table class='table table-hover table-responsive table-bordered'>
-			<tr>
-			<td>product_id</td> 
-			<td><input type='number' name='id' class='form-control' /></td>
-			</tr>
-			<tr>
-			<td>product_name</td> 
-			<td><input type='number' name='name' class='form-control' /></td>
-			</tr>
-			<tr>
-			<td>product_stock</td> 
-			<td><input type='number' name='stock' class='form-control' /></td>
-			</tr>
-			<tr>
-			<td>product_price</td> 
-			<td><input type='number' name='price' class='form-control' /></td>
-			</tr>
-			<tr>
-			<td></td>
-			<td>
+		<form method="get" action="" >
+			product_id: <input type='number' name='id' class='form-control' /></td>
+			product_name:<input type='number' name='name' class='form-control' /></td>
+			product_stock:<input type='number' name='stock' class='form-control' /></td>
+			product_price:<input type='number' name='price' class='form-control' /></td>
 				<input type="submit" name = "add" value="Add" class='btn btn-primary'/>
 				<a href='index.php' class='btn btn-danger'>Cancel Go back</a>
-            		</td>
-       			 </tr>
-			</table>
+            	
 		</form>
 		
 	</body>

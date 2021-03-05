@@ -42,10 +42,11 @@ session_start();
 					next($row);
 					$y = $y + 1;
 				}
+				echo "<a href='#' onclick='delete_user({$product_ID});'  class='btn btn-danger'>Delete</a>";
 				echo '</tr>';
 				$i = $i + 1;
 			}
-			echo "<a href='#' onclick='delete_user({$product_ID});'  class='btn btn-danger'>Delete</a>";
+			
 			pg_free_result($result);
 
 			echo "</table>";

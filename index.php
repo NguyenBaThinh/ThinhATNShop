@@ -22,11 +22,11 @@ session_start();
 			while ($i < pg_num_fields($result))
 			{
 				$fieldName = pg_field_name($result, $i);
-				echo '<td>' . $fieldName . '</td>';
-				echo "<th>Action</th>";
+				echo "<th> . $fieldName . </th>";
 				$i = $i + 1;
 				
 			}
+			echo "<th>Action</th>";
 			echo '</tr>';
 			# Display data row by row
 			$i = 0;

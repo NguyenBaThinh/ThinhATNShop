@@ -38,13 +38,14 @@ session_start();
 				while ($y < $count)
 				{
 					$c_row = current($row);
-					echo '<td>' . $c_row . '</td>';
+					echo "<td> . $c_row . </td>";
 					next($row);
 					$y = $y + 1;
 				}
 				echo '</tr>';
 				$i = $i + 1;
 			}
+			echo "<a href='#' onclick='delete_user({$id});'  class='btn btn-danger'>Delete</a>";
 			pg_free_result($result);
 
 			echo "</table>";

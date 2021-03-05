@@ -1,6 +1,6 @@
 <?php 
 session_start();
-			echo '<p>THINH ATN SHOP </p>'; 
+			echo '<p><h1>THINH ATN SHOP </h1></p>'; 
 			# Heroku credential 
 			$host_heroku = "ec2-35-171-57-132.compute-1.amazonaws.com";
 			$db_heroku = "d8847oi5c0tnc2";
@@ -53,7 +53,7 @@ session_start();
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>PHP Test</title>
+		<title>Welcome StoreStaff</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 		<style>
 		    .m-r-1em{ margin-right:1em; }
